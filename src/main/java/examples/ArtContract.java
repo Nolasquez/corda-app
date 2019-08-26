@@ -11,6 +11,7 @@ import static net.corda.core.contracts.ContractsDSL.requireSingleCommand;
 // Like all contracts, implements `Contract`.
 public class ArtContract implements Contract {
     // Used to reference the contract in transactions.
+    //Nombre del paquete y clase
     public static final String ID = "examples.ArtContract";
 
     public interface Commands extends CommandData {
@@ -19,6 +20,7 @@ public class ArtContract implements Contract {
         class Exit implements Commands { }
     }
 
+    //
     @Override
     public void verify(LedgerTransaction tx) throws IllegalArgumentException {
         CommandWithParties<Commands> command = requireSingleCommand(tx.getCommands(), Commands.class);
